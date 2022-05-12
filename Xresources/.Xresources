@@ -1,0 +1,56 @@
+URxvt.font:xft:agave Nerd Font:pixelsize=14, xft:DejaVu Sans Mono Nerd Font:pixelsize=14
+URxvt.scrollBar: false
+URxvt.internalBorder: 20
+URxvt*iso14755: false
+URxvt*iso14755_52: false
+
+URxvt*perl-ext-common: resize-font
+
+*foreground:        #ffffff
+*background:        #000000
+*.foreground:       #ffffff
+*.background:       #000000
+URxvt*foreground:   #ffffff
+URxvt*background:   [100]#000000
+URxvt*cursorColor:  #ffffff
+URxvt*borderColor:  [100]#000000
+
+*.color0: #000000
+*color0:  #000000
+*.color1: #999999
+*color1:  #999999
+*.color2: #999999
+*color2:  #999999
+*.color3: #aaaaaa
+*color3:  #aaaaaa
+*.color4: #bbbbbb
+*color4:  #bbbbbb
+*.color5: #cccccc
+*color5:  #cccccc
+*.color6: #dddddd
+*color6:  #dddddd
+*.color7: #eeeeee
+*color7:  #eeeeee
+*.color8: #ffffff
+*color8:  #ffffff
+*.color9: #000000
+*color9:  #000000
+*.color10: #999999
+*color10:  #999999
+*.color11: #999999
+*color11:  #999999
+*.color12: #aaaaaa
+*color12:  #aaaaaa
+*.color13: #bbbbbb
+*color13:  #bbbbbb
+*.color14: #cccccc
+*color14:  #cccccc
+*.color15: #dddddd
+*color15:  #dddddd
+*.color16: #eeeeee
+*color16:  #eeeeee
+*.color17: #ffffff
+*color17:  #ffffff
+
+*.color66: #000000
+*color66:  #000000
