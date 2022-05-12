@@ -17,7 +17,6 @@ bind-key 4S-p "\
 bind-key 4-p paint
 bind-key 4-z boomer
 bind-key 4-v vimeverywhere
-bind-key 45-s /home/krzych/scripts/popup/spt_popup
 bind-key 4-w firefox
 bind-key 4-e emoji
 
