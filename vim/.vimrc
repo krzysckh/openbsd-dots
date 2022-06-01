@@ -16,6 +16,7 @@ syntax on
 so /home/kpm/res/sus_bw.vim
 
 set relativenumber
+set number
 set showcmd
 set mouse=a
 set showmatch		" Show matching brackets.
