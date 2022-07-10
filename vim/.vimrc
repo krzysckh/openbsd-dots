@@ -11,6 +11,14 @@ function Set_spaces()
 	set shiftwidth=2
 endfunction
 
+function Show_spaces_put_tabs()
+	" put tab, but show it as 2 spaces
+	set noexpandtab
+	set tabstop=2
+	set softtabstop=2
+	set shiftwidth=2
+endfunction
+
 syntax on
 
 so /home/kpm/res/sus_bw.vim
@@ -39,13 +47,17 @@ set shiftwidth=8
 
 autocmd Filetype c call Set_spaces()
 autocmd Filetype cpp call Set_spaces()
+autocmd Filetype go call Show_spaces_put_tabs()
 
 au BufNewFile,BufRead *.xaml setf xml
 au BufNewFile,BufRead *.axaml setf xml
-
 au BufNewFile,BufRead *.nelua setf lua
-
 au BufNewFile,BufRead *.y call Set_spaces()
+au BufNewFile,BufRead *.c call Set_spaces()
+au BufNewFile,BufRead *.cpp call Set_spaces()
+au BufNewFile,BufRead *.h call Set_spaces()
+au BufNewFile,BufRead *.hpp call Set_spaces()
+au BufNewFile,BufRead *.go call Show_spaces_put_tabs()
 
 let &t_SI = "\e[5 q"
 let &t_SR = "\e[4 q"
@@ -71,6 +83,13 @@ call plug#begin('~/.vim/plugged')
 	" discord rich presence
 	Plug 'editorconfig/editorconfig-vim'
 	" .editorconfig
+
+	Plug 'prabirshrestha/async.vim', { 'for': 'go' }
+	Plug 'prabirshrestha/vim-lsp', { 'for': 'go' }
+	Plug 'prabirshrestha/asyncomplete.vim', { 'for': 'go' }
+	Plug 'prabirshrestha/asyncomplete-lsp.vim', { 'for': 'go' }
+	Plug 'mattn/vim-lsp-settings', { 'for': 'go' }
+	Plug 'ajh17/vimcompletesme', { 'for': 'go' }
 call plug#end()
 
 map <leader><leader> :call halo#run({'shape':'line'})<CR>

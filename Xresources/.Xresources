@@ -1,4 +1,6 @@
 URxvt.font:xft:agave Nerd Font:pixelsize=14, xft:DejaVu Sans Mono Nerd Font:pixelsize=14
+!URxvt.font:xft:Fixedsys Excelsior:pixelsize=14, xft:DejaVu Sans Mono Nerd Font:pixelsize=14
+!URxvt.letterSpace: -3
 URxvt.scrollBar: false
 URxvt.internalBorder: 20
 URxvt*iso14755: false
