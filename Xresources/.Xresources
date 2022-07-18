@@ -6,7 +6,10 @@ URxvt.internalBorder: 20
 URxvt*iso14755: false
 URxvt*iso14755_52: false
 
-URxvt*perl-ext-common: resize-font
+URxvt*perl-ext-common: resize-font,matcher
+URxvt.url-launcher:       firefox
+URxvt.matcher.button:     Ctrl-1
+URxvt.matcher.pattern.1:  \\bwww\\.[\\w-]+\\.[\\w./?&@#-]*[\\w/-]
 
 *foreground:        #ffffff
 *background:        #000000

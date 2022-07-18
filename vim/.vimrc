@@ -85,10 +85,10 @@ call plug#begin('~/.vim/plugged')
 	" .editorconfig
 
 	Plug 'prabirshrestha/async.vim', { 'for': 'go' }
-	Plug 'prabirshrestha/vim-lsp', { 'for': 'go' }
+	Plug 'prabirshrestha/vim-lsp' , { 'for': 'go' }
 	Plug 'prabirshrestha/asyncomplete.vim', { 'for': 'go' }
 	Plug 'prabirshrestha/asyncomplete-lsp.vim', { 'for': 'go' }
-	Plug 'mattn/vim-lsp-settings', { 'for': 'go' }
+	Plug 'mattn/vim-lsp-settings' , { 'for': 'go' }
 	Plug 'ajh17/vimcompletesme', { 'for': 'go' }
 call plug#end()
 

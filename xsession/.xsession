@@ -19,6 +19,7 @@ xinput set-prop "/dev/wsmouse" "WS Pointer Wheel Emulation Axes" 6 7 4 5
 # openbsd-wallpaper &
 xwallpaper --output eDP-1 --maximize /home/kpm/documents/img/wal.jpg
 xbanish &
+urxvtd -q -o -f
 
 case $__wm in
 	cwm)
