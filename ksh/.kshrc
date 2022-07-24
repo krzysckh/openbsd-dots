@@ -5,6 +5,8 @@ export EDITOR=vim
 export VISUAL=vim
 export PAGER=less
 
+alias catgirl='catgirl -H 1'
+
 HISTFILE=$HOME/.ksh_history
 HISTSIZE=1000000
 

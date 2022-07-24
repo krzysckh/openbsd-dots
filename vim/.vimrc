@@ -40,6 +40,8 @@ set wildmenu
 set backspace=indent,eol,start
 set ttyfast
 
+runtime! ftplugin/man.vim
+
 set noexpandtab
 set tabstop=8
 set softtabstop=8
