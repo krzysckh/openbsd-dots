@@ -14,12 +14,9 @@ mkcopy() {
 [ $USER = 'kpm' ] || AYUP
 
 mkcopy Xresources ~/.Xresources
-mkcopy cwmrc ~/.cwmrc
 mkcopy vi ~/.exrc
 mkcopy ksh ~/.kshrc
 mkcopy profile ~/.profile
 mkcopy vim ~/.vimrc
 mkcopy xsession ~/.xsession
-mkcopy res ~/res/sus_bw.vim
-
 

@@ -1,21 +1,22 @@
 my openbsd dotfiles
 ---
 
+screenshot: https://pub.krzysckh.org/screenshot.png
+
 about:
 X is started using xenodm(1). xenodm shows login screen, and upon login
 it runs ~/.xsession. This file exports PATH, starts the bar and xbanish,
 sets environment, and _language_ (you should probably configure the last one),
-and runs the cwm(1) window manager. I have some weird customizations in .cwmrc,
-so you should probably change them. Also, i use patched version of urxvt
-(patched manually with 
-	https://aur.archlinux.org/packages/rxvt-unicode-truecolor-wide-glyphs)
+and runs the dwm window manager.  Also, i use patched version of urxvt (patched
+manually with
+https://aur.archlinux.org/packages/rxvt-unicode-truecolor-wide-glyphs)
 
 Also, the font is agave nerd font.
 
 To use them you'll need:
-- lemonbar-xft with bsd_bar from https://github.com/krzysckh/bin
-  (my bar script)
-- openbsd-backgrounds
+- my dwm build from https://pub.krzysckh.org/dwm.tgz
+- bsd_bar from https://github.com/krzysckh/bin (my bar script)
+- wallpaper from https://pub.krzysckh.org/wallpaper.png
 - scrot
 - xclip
 
@@ -36,5 +37,5 @@ Also, consider installing:
 ---
 
 if you want to correct me on something consider opening an issue on github
-or writing a mail to <kpm [at] linux [dot] pl>
+or writing a mail to <krzych [at] catgirl [dot] digital>
 
