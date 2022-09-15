@@ -1,4 +1,4 @@
-URxvt.font:xft:agave Nerd Font:pixelsize=14, xft:DejaVu Sans Mono Nerd Font:pixelsize=14
+URxvt.font:xft:agave Nerd Font:pixelsize=14, xft:DejaVu Sans Mono Nerd Font:pixelsize=14, xft:Noto Color Emoji:pixelsize=14
 !URxvt.font:xft:Fixedsys Excelsior:pixelsize=14, xft:DejaVu Sans Mono Nerd Font:pixelsize=14
 !URxvt.letterSpace: -3
 URxvt.scrollBar: false
@@ -7,55 +7,32 @@ URxvt*iso14755: false
 URxvt*iso14755_52: false
 
 URxvt*perl-ext-common: resize-font,matcher
-URxvt.url-launcher:       firefox
-URxvt.matcher.button:     Ctrl-1
-URxvt.matcher.pattern.1:  \\bwww\\.[\\w-]+\\.[\\w./?&@#-]*[\\w/-]
+URxvt.url-launcher: firefox
+URxvt.matcher.button: Ctrl-1
+URxvt.matcher.pattern.1: \\bwww\\.[\\w-]+\\.[\\w./?&@#-]*[\\w/-]
 
-*foreground:        #ffffff
-*background:        #000000
-*.foreground:       #ffffff
-*.background:       #000000
-URxvt*foreground:   #ffffff
-URxvt*background:   [100]#000000
-URxvt*cursorColor:  #ffffff
-URxvt*borderColor:  [100]#000000
+URxvt.cursorColor: #f8f8f2
+URxvt*borderColor:  [100]#282a36
 
-*.color0: #000000
-*color0:  #000000
-*.color1: #999999
-*color1:  #999999
-*.color2: #999999
-*color2:  #999999
-*.color3: #aaaaaa
-*color3:  #aaaaaa
-*.color4: #bbbbbb
-*color4:  #bbbbbb
-*.color5: #cccccc
-*color5:  #cccccc
-*.color6: #dddddd
-*color6:  #dddddd
-*.color7: #eeeeee
-*color7:  #eeeeee
-*.color8: #ffffff
-*color8:  #ffffff
-*.color9: #000000
-*color9:  #000000
-*.color10: #999999
-*color10:  #999999
-*.color11: #999999
-*color11:  #999999
-*.color12: #aaaaaa
-*color12:  #aaaaaa
-*.color13: #bbbbbb
-*color13:  #bbbbbb
-*.color14: #cccccc
-*color14:  #cccccc
-*.color15: #dddddd
-*color15:  #dddddd
-*.color16: #eeeeee
-*color16:  #eeeeee
-*.color17: #ffffff
-*color17:  #ffffff
+! Dracula Xresources palette
+*.foreground: #F8F8F2
+*.background: #282A36
+*.color0:     #000000
+*.color8:     #4D4D4D
+*.color1:     #FF5555
+*.color9:     #FF6E67
+*.color2:     #50FA7B
+*.color10:    #5AF78E
+*.color3:     #F1FA8C
+*.color11:    #F4F99D
+*.color4:     #BD93F9
+*.color12:    #CAA9FA
+*.color5:     #FF79C6
+*.color13:    #FF92D0
+*.color6:     #8BE9FD
+*.color14:    #9AEDFE
+*.color7:     #BFBFBF
+*.color15:    #E6E6E6
 
-*.color66: #000000
-*color66:  #000000
+*.color66: #282a36
+*color66:  #282a36

@@ -1,13 +1,15 @@
 #!/bin/sh
 
+export QT_FONT_DPI=96
 __wm=dwm
-
-export PATH=$PATH:$HOME/bin:$HOME/.local/bin:/usr/local/plan9/bin:/usr/games:/usr/local/jdk-17/bin:$HOME/go/bin
+export _JAVA_AWT_WM_NONREPARENTING=1
+export PATH=$PATH:$HOME/bin:$HOME/.local/bin:/usr/local/plan9/bin:/usr/games:/usr/local/jdk-17/bin:$HOME/go/bin:$HOME/.cargo/bin
 
 xrdb .Xresources
 
 setxkbmap pl
 
+export PLAN9=/usr/local/plan9
 export ENV=$HOME/.kshrc
 export LANG=pl_PL.UTF-8
 
@@ -33,5 +35,8 @@ case $__wm in
 esac
 
 ps auxw | grep bsd_bar | awk '{print $2}' | xargs kill -9 
+
+export AUTOMAKE_VERSION=1.16
+export AUTOCONF_VERSION=2.69
 
 # O---o

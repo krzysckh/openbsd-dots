@@ -1,6 +1,7 @@
 filetype plugin indent on
 
 set colorcolumn=80
+set textwidth=80
 
 let mapleader = ","
 
@@ -21,7 +22,7 @@ endfunction
 
 syntax on
 
-so /home/kpm/res/sus_bw.vim
+"so /home/kpm/res/sus_bw.vim
 
 set relativenumber
 set number
@@ -49,7 +50,11 @@ set shiftwidth=8
 
 autocmd Filetype c call Set_spaces()
 autocmd Filetype cpp call Set_spaces()
+autocmd Filetype html call Set_spaces()
+autocmd Filetype plain call Set_spaces()
+autocmd Filetype perl call Set_spaces()
 autocmd Filetype go call Show_spaces_put_tabs()
+autocmd Filetype php call Show_spaces_put_tabs()
 
 au BufNewFile,BufRead *.xaml setf xml
 au BufNewFile,BufRead *.axaml setf xml
@@ -85,17 +90,20 @@ call plug#begin('~/.vim/plugged')
 	" discord rich presence
 	Plug 'editorconfig/editorconfig-vim'
 	" .editorconfig
+	Plug 'dracula/vim', { 'as': 'dracula' }
+	" colorscheme
 
-	Plug 'prabirshrestha/async.vim', { 'for': 'go' }
-	Plug 'prabirshrestha/vim-lsp' , { 'for': 'go' }
-	Plug 'prabirshrestha/asyncomplete.vim', { 'for': 'go' }
-	Plug 'prabirshrestha/asyncomplete-lsp.vim', { 'for': 'go' }
-	Plug 'mattn/vim-lsp-settings' , { 'for': 'go' }
-	Plug 'ajh17/vimcompletesme', { 'for': 'go' }
+	Plug 'prabirshrestha/async.vim', { 'for': ['go', 'java'] }
+	Plug 'prabirshrestha/vim-lsp', { 'for': ['go', 'java'] }
+	Plug 'prabirshrestha/asyncomplete.vim', { 'for': ['go', 'java'] }
+	Plug 'prabirshrestha/asyncomplete-lsp.vim', { 'for': ['go', 'java'] }
+	Plug 'mattn/vim-lsp-settings', { 'for': ['go', 'java'] }
+	Plug 'ajh17/vimcompletesme', { 'for': ['go', 'java'] }
 call plug#end()
 
-map <leader><leader> :call halo#run({'shape':'line'})<CR>
+colorscheme dracula
 
+map <leader><leader> :call halo#run({'shape':'line'})<CR>
 
 command! -range=% Topdf :hardcopy > %.ps | !ps2pdf %.ps && rm %.ps && echo "=> %.pdf"
 

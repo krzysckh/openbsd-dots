@@ -6,6 +6,13 @@ export VISUAL=vim
 export PAGER=less
 
 alias catgirl='catgirl -H 1'
+alias gc='git clone'
+alias web2plain='w3m -dump -cols 80 -o display_image=false \
+	-o display_link_number=true'
+alias cleanmeta="exiftool -all:all= -r"
+alias predefined="clang -E -dM - < /dev/null"
+alias predefined_tcc="tcc -E -dM - < /dev/null"
+alias 9fortune="9 fortune $HOME/documents/text/fortunes"
 
 HISTFILE=$HOME/.ksh_history
 HISTSIZE=1000000
