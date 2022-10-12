@@ -1,5 +1,7 @@
 #!/bin/sh
 
+ulimit -Sd `ulimit -Hd`
+
 export QT_FONT_DPI=96
 __wm=dwm
 export _JAVA_AWT_WM_NONREPARENTING=1
