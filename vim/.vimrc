@@ -52,6 +52,7 @@ autocmd Filetype c call Set_spaces()
 autocmd Filetype cpp call Set_spaces()
 autocmd Filetype html call Set_spaces()
 autocmd Filetype plain call Set_spaces()
+autocmd Filetype javascript call Set_spaces()
 autocmd Filetype perl call Set_spaces()
 autocmd Filetype go call Show_spaces_put_tabs()
 autocmd Filetype php call Show_spaces_put_tabs()
@@ -93,12 +94,12 @@ call plug#begin('~/.vim/plugged')
 	Plug 'dracula/vim', { 'as': 'dracula' }
 	" colorscheme
 
-	Plug 'prabirshrestha/async.vim', { 'for': ['go', 'java'] }
-	Plug 'prabirshrestha/vim-lsp', { 'for': ['go', 'java'] }
-	Plug 'prabirshrestha/asyncomplete.vim', { 'for': ['go', 'java'] }
-	Plug 'prabirshrestha/asyncomplete-lsp.vim', { 'for': ['go', 'java'] }
-	Plug 'mattn/vim-lsp-settings', { 'for': ['go', 'java'] }
-	Plug 'ajh17/vimcompletesme', { 'for': ['go', 'java'] }
+	Plug 'prabirshrestha/async.vim', { 'for': ['go', 'java', 'javascript'] }
+	Plug 'prabirshrestha/vim-lsp', { 'for': ['go', 'java', 'javascript'] }
+	Plug 'prabirshrestha/asyncomplete.vim', { 'for': ['go', 'java', 'javascript'] }
+	Plug 'prabirshrestha/asyncomplete-lsp.vim', { 'for': ['go', 'java', 'javascript'] }
+	Plug 'mattn/vim-lsp-settings', { 'for': ['go', 'java', 'javascript'] }
+	Plug 'ajh17/vimcompletesme', { 'for': ['go', 'java', 'javascript'] }
 call plug#end()
 
 colorscheme dracula
