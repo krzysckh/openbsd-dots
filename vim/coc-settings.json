@@ -1,0 +1,32 @@
+{
+  "coc.preferences.formatOnType": true,
+  "coc.preferences.enableLinkedEditing": true,
+  "diagnostic.floatConfig": {
+    "rounded": false,
+    "border": true
+  },
+  "hover.floatConfig": {
+    "rounded": false,
+    "border": true
+  },
+
+  "diagnostic.virtualText": false,
+  "diagnostic.checkCurrentLine": true,
+  "diagnostic.separateRelatedInformationAsDiagnostics": true,
+  "pullDiagnostic.onChange": false,
+  "pullDiagnostic.onSave": true,
+  "inlayHint.enable": false,
+
+  "semanticTokens.enable": false,
+
+  "languageserver": {
+    "perlnavigator": {
+      "command": "node",
+      "args": [
+        "/home/kpm/nmojeprogramy/PerlNavigator/server/out/server.js",
+        "--stdio"
+      ],
+      "filetypes": ["perl"]
+    }
+  }
+}

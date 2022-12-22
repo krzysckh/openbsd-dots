@@ -41,6 +41,9 @@ set wildmenu
 set backspace=indent,eol,start
 set ttyfast
 
+set foldenable
+set foldmethod=manual
+
 runtime! ftplugin/man.vim
 
 set noexpandtab
@@ -94,12 +97,13 @@ call plug#begin('~/.vim/plugged')
 	Plug 'dracula/vim', { 'as': 'dracula' }
 	" colorscheme
 
-	Plug 'prabirshrestha/async.vim', { 'for': ['go', 'java', 'javascript'] }
-	Plug 'prabirshrestha/vim-lsp', { 'for': ['go', 'java', 'javascript'] }
-	Plug 'prabirshrestha/asyncomplete.vim', { 'for': ['go', 'java', 'javascript'] }
-	Plug 'prabirshrestha/asyncomplete-lsp.vim', { 'for': ['go', 'java', 'javascript'] }
-	Plug 'mattn/vim-lsp-settings', { 'for': ['go', 'java', 'javascript'] }
-	Plug 'ajh17/vimcompletesme', { 'for': ['go', 'java', 'javascript'] }
+	"Plug 'prabirshrestha/async.vim', { 'for': ['go', 'java', 'javascript', 'php', 'c', 'perl'] }
+	"Plug 'prabirshrestha/vim-lsp', { 'for': ['go', 'java', 'javascript', 'php', 'c', 'perl']}
+	"Plug 'prabirshrestha/asyncomplete.vim', { 'for': ['go', 'java', 'javascript', 'php', 'c', 'perl'] }
+	"Plug 'prabirshrestha/asyncomplete-lsp.vim', { 'for': ['go', 'java', 'javascript', 'php', 'c', 'perl'] }
+	"Plug 'mattn/vim-lsp-settings', { 'for': ['go', 'java', 'javascript', 'php', 'c', 'perl'] }
+	"Plug 'ajh17/vimcompletesme', { 'for': ['go', 'java', 'javascript', 'php', 'c', 'perl'] }
+	Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
 call plug#end()
 
 colorscheme dracula
@@ -119,3 +123,19 @@ let g:startify_lists = [
 			\ ]
 highlight StartifyHeader guifg=#dedede cterm=bold
 
+"let g:lsp_diagnostics_float_cursor = 1
+
+set signcolumn=yes
+let g:vcm_tab_complete = 'user'
+function! CheckBackspace() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+inoremap <silent><expr> <Tab>
+	\ coc#pum#visible() ? coc#pum#next(1) :
+	\ CheckBackspace() ? "\<Tab>" :
+	\ coc#refresh()
+
+highlight RedundantWhitespace ctermbg=red guibg=#ff5555
+match RedundantWhitespace /\s\+$/

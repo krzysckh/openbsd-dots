@@ -18,5 +18,6 @@ mkcopy vi ~/.exrc
 mkcopy ksh ~/.kshrc
 mkcopy profile ~/.profile
 mkcopy vim ~/.vimrc
+mkcopy vim ~/.vim/coc-settings.json
 mkcopy xsession ~/.xsession
 

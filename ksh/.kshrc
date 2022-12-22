@@ -16,6 +16,7 @@ alias 9fortune="9 fortune $HOME/documents/text/fortunes"
 alias a='ssh kpm@100.64.3.3'
 alias dt="Xephyr -fullscreen :1 & (sleep 1 ; DISPLAY=:1
 drawterm -g 1366x768 -a 10.0.2.2 -h 10.0.2.2 -u kpm)"
+alias pm="doas make clean && perl Makefile.PL && make && doas make install"
 
 topdf() {
   [ -z "$1" ] && return
