@@ -27,6 +27,14 @@
         "--stdio"
       ],
       "filetypes": ["perl"]
+    },
+    "fennel-language-server": {
+      "command": "fennel-language-server",
+      "args": [
+        "lsp",
+        "stdio"
+      ],
+      "filetypes": ["fennel"]
     }
   }
 }

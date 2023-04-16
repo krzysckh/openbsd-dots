@@ -1,4 +1,3 @@
-
 set -o vi
 
 export EDITOR=vim
@@ -17,6 +16,7 @@ alias a='ssh kpm@100.64.3.3'
 alias dt="Xephyr -fullscreen :1 & (sleep 1 ; DISPLAY=:1
 drawterm -g 1366x768 -a 10.0.2.2 -h 10.0.2.2 -u kpm)"
 alias pm="doas make clean && perl Makefile.PL && make && doas make install"
+alias pstree="pstree -g3"
 
 topdf() {
   [ -z "$1" ] && return
@@ -27,8 +27,8 @@ topdf() {
 }
 
 HISTFILE=$HOME/.ksh_history
-HISTSIZE=1000000
+HISTSIZE=100000000
 
-PS1="$ "
+PS1="λ "
 
 #export PATH=$PATH:$HOME/bin:$HOME/.local/bin:/usr/local/plan9/bin:/usr/games
