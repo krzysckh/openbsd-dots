@@ -35,6 +35,10 @@
         "stdio"
       ],
       "filetypes": ["fennel"]
-    }
+    },
+    "vala": {
+       "command": "vala-language-server",
+       "filetypes": ["vala", "genie"]
+     }
   }
 }

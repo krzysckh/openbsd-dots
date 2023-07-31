@@ -17,6 +17,9 @@ alias dt="Xephyr -fullscreen :1 & (sleep 1 ; DISPLAY=:1
 drawterm -g 1366x768 -a 10.0.2.2 -h 10.0.2.2 -u kpm)"
 alias pm="doas make clean && perl Makefile.PL && make && doas make install"
 alias pstree="pstree -g3"
+alias mpvp="mpv --playlist=-"
+alias lg="lazygit"
+alias d="doas"
 
 topdf() {
   [ -z "$1" ] && return

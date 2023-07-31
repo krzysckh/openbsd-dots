@@ -90,12 +90,18 @@ call plug#begin('~/.vim/plugged')
   " K for perl
   Plug 'junegunn/vim-easy-align'
   " align
+  Plug 'vala-lang/vala.vim'
+  " vala syntax
   Plug 'jaawerth/fennel.vim'
   " fennel syntax
-  Plug 'hylang/vim-hy'
-  " hy syntax
+  Plug 'janet-lang/janet.vim'
+  " janet syntax
   Plug 'tpope/vim-eunuch'
   " unix helpers
+  Plug 'matthewfranglen/vim-scheme'
+  " scm
+  Plug 'junegunn/fzf.vim'
+  " fzf
 
   "Plug 'prabirshrestha/async.vim', { 'for': ['go', 'java', 'javascript', 'php', 'c', 'perl'] }
   "Plug 'prabirshrestha/vim-lsp', { 'for': ['go', 'java', 'javascript', 'php', 'c', 'perl']}
@@ -114,6 +120,11 @@ xmap <leader>a <Plug>(EasyAlign)
 nmap <leader>a <Plug>(EasyAlign)
 
 map <leader><leader> :call halo#run({'shape':'line'})<CR>
+
+nmap <leader>b :Buffers<cr>
+
+nmap <leader>e <Plug>Scheme
+vmap <leader>e <Plug>Scheme
 
 imap <C-l> λ
 
@@ -154,3 +165,16 @@ match RedundantWhitespace /\s\+$/
 " don't highlight whitespace on Startify
 autocmd User StartifyReady match RedundantWhitespace //
 autocmd User StartifyBufferOpened match RedundantWhitespace /\s\+$/
+
+let g:scheme_evaluator = 'ol-q' " https://github.com/krzysckh/bin
+
+" conceal
+aug Conceal
+  au!
+  au FileType * syntax match Normal /\<sum\>/ conceal cchar=∑
+  au FileType * syntax match Boolean /\<\#t\(rue\)\?\>/ conceal cchar=⊤
+  au FileType * syntax match Boolean /\<\#f\(alse\)\?\>/ conceal cchar=⊥
+aug END
+
+set conceallevel=2
+set concealcursor=nv
