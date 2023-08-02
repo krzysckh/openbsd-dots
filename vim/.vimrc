@@ -102,6 +102,9 @@ call plug#begin('~/.vim/plugged')
   " scm
   Plug 'junegunn/fzf.vim'
   " fzf
+  Plug 'itchyny/lightline.vim'
+  " lightline
+  Plug 'tpope/vim-fugitive'
 
   "Plug 'prabirshrestha/async.vim', { 'for': ['go', 'java', 'javascript', 'php', 'c', 'perl'] }
   "Plug 'prabirshrestha/vim-lsp', { 'for': ['go', 'java', 'javascript', 'php', 'c', 'perl']}
@@ -178,3 +181,32 @@ aug END
 
 set conceallevel=2
 set concealcursor=nv
+
+" lightline config
+set laststatus=2
+set noshowmode
+
+let g:lightline = {
+      \ 'colorscheme': 'dracula',
+			\ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'FugitiveHead'
+      \ },
+      \ }
+
+let g:lightline.mode_map = {
+    \ 'n':      'normal',
+    \ 'i':      'insert',
+    \ 'R':      'replace',
+    \ 'v':      'visual',
+    \ 'V':      'v-line',
+    \ "\<C-v>": 'v-block',
+    \ 'c':      'command',
+    \ 's':      'select',
+    \ 'S':      's-line',
+    \ "\<C-s>": 's-block',
+    \ 't':      'terminal',
+    \ }
