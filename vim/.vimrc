@@ -1,9 +1,6 @@
 filetype plugin indent on
 
-set colorcolumn=80
-set textwidth=80
-
-let mapleader = ","
+let mapleader = " "
 
 function Set_spaces()
   set expandtab
@@ -31,25 +28,32 @@ syntax on
 
 "so /home/kpm/res/sus_bw.vim
 
-set relativenumber
-set number
-set showcmd
-set mouse=a
-set showmatch
-set ignorecase
-set smartcase
-set incsearch
 set autowrite
-set hidden
-set termguicolors
-set title
-set signcolumn=yes
-set wildmenu
 set backspace=indent,eol,start
-set ttyfast
-
+set colorcolumn=80
+set concealcursor=nv
+set conceallevel=2
 set foldenable
 set foldmethod=manual
+set guifont=agave\ Nerd\ Font\ 12
+set guioptions=Ac
+set hidden
+set ignorecase
+set incsearch
+set laststatus=2
+set mouse=a
+set noshowmode
+set number
+set relativenumber
+set showcmd
+set showmatch
+set signcolumn=yes
+set smartcase
+set termguicolors
+set textwidth=80
+set title
+set ttyfast
+set wildmenu
 
 runtime! ftplugin/man.vim
 
@@ -105,13 +109,11 @@ call plug#begin('~/.vim/plugged')
   Plug 'itchyny/lightline.vim'
   " lightline
   Plug 'tpope/vim-fugitive'
+  " git
+  Plug 'justinmk/vim-dirvish'
+  " better netrw
+  Plug 'antoyo/vim-licenses'
 
-  "Plug 'prabirshrestha/async.vim', { 'for': ['go', 'java', 'javascript', 'php', 'c', 'perl'] }
-  "Plug 'prabirshrestha/vim-lsp', { 'for': ['go', 'java', 'javascript', 'php', 'c', 'perl']}
-  "Plug 'prabirshrestha/asyncomplete.vim', { 'for': ['go', 'java', 'javascript', 'php', 'c', 'perl'] }
-  "Plug 'prabirshrestha/asyncomplete-lsp.vim', { 'for': ['go', 'java', 'javascript', 'php', 'c', 'perl'] }
-  "Plug 'mattn/vim-lsp-settings', { 'for': ['go', 'java', 'javascript', 'php', 'c', 'perl'] }
-  "Plug 'ajh17/vimcompletesme', { 'for': ['go', 'java', 'javascript', 'php', 'c', 'perl'] }
   Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
 call plug#end()
 
@@ -121,6 +123,11 @@ xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 xmap <leader>a <Plug>(EasyAlign)
 nmap <leader>a <Plug>(EasyAlign)
+
+nmap <leader>y "+y
+nmap <leader>p "+p
+nmap <BS> <C-^>
+nmap <leader>d :e .<cr>
 
 map <leader><leader> :call halo#run({'shape':'line'})<CR>
 
@@ -133,11 +140,18 @@ imap <C-l> λ
 
 command! -range=% Topdf :hardcopy > %.ps | !ps2pdf %.ps && rm %.ps && echo "=> %.pdf"
 
-let g:hy_enable_conceal = 1
+let g:licenses_default_commands = ['bsd2', 'bsd3', 'cc0', 'gpl', 'gplv2', 'mit',
+      \ 'wtfpl']
+let g:licenses_copyright_holders_name = 'krzysckh <kpm@linux.pl>'
 let g:Hexokinase_highlighters = ['backgroundfull']
 
-let g:startify_custom_header =
-      \ startify#center(split(system('figlet -w $(tput cols) -f speed vim'), '\n'))
+if has('gui_running')
+  let g:startify_custom_header =
+        \ startify#center(split(system('figlet -w 70 -f speed vim'), '\n'))
+else
+  let g:startify_custom_header =
+        \ startify#center(split(system('figlet -w $(tput cols) -f speed vim'), '\n'))
+endif
 
 let g:startify_lists = [
       \ { 'type': 'files', 'header': ['recent'] },
@@ -147,7 +161,6 @@ highlight StartifyHeader guifg=#dedede cterm=bold
 
 "let g:lsp_diagnostics_float_cursor = 1
 
-set signcolumn=yes
 let g:vcm_tab_complete = 'user'
 function! CheckBackspace() abort
   let col = col('.') - 1
@@ -179,13 +192,6 @@ aug Conceal
   au FileType * syntax match Boolean /\<\#f\(alse\)\?\>/ conceal cchar=⊥
 aug END
 
-set conceallevel=2
-set concealcursor=nv
-
-" lightline config
-set laststatus=2
-set noshowmode
-
 let g:lightline = {
       \ 'colorscheme': 'dracula',
 			\ 'active': {
@@ -210,3 +216,11 @@ let g:lightline.mode_map = {
     \ "\<C-s>": 's-block',
     \ 't':      'terminal',
     \ }
+
+augroup dirvish_config
+  autocmd!
+  autocmd FileType dirvish nnoremap <silent><buffer> h
+        \ <Plug>(dirvish_up)
+  autocmd FileType dirvish nnoremap <silent><buffer> <bs>
+        \ <Plug>(dirvish_up)
+augroup END
