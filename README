@@ -11,7 +11,7 @@ and runs the dwm window manager.  Also, i use patched version of urxvt (patched
 manually with
 https://aur.archlinux.org/packages/rxvt-unicode-truecolor-wide-glyphs)
 
-Also, the font is agave nerd font.
+Also, the font is Lilex.
 
 To use them you'll need:
 - my dwm build from https://pub.krzysckh.org/dwm.tgz

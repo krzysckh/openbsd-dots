@@ -1,22 +1,26 @@
 {
   "coc.preferences.formatOnType": true,
   "coc.preferences.enableLinkedEditing": true,
+  "signature.enable": true,
+  "signature.floatConfig": {
+    "rounded": false,
+    "border": true
+  },
   "diagnostic.floatConfig": {
     "rounded": false,
     "border": true
   },
-  "hover.floatConfig": {
-    "rounded": false,
-    "border": true
-  },
+  "coc.preferences.floatActions": false,
+
+  "colors.enable": true,
 
   "diagnostic.virtualText": false,
   "diagnostic.checkCurrentLine": true,
   "diagnostic.separateRelatedInformationAsDiagnostics": true,
   "pullDiagnostic.onChange": false,
   "pullDiagnostic.onSave": true,
-  "inlayHint.enable": false,
 
+  "inlayHint.enable": false,
   "semanticTokens.enable": false,
 
   "languageserver": {

@@ -3,7 +3,9 @@ set -o vi
 export EDITOR=vim
 export VISUAL=vim
 export PAGER=less
+export SUDO=doas # for chicken-install
 
+alias chicken-install="chicken-install -s"
 alias catgirl='catgirl -H 1'
 alias gc='git clone'
 alias web2plain='w3m -dump -cols 80 -o display_image=false \

@@ -1,5 +1,4 @@
 filetype plugin indent on
-
 let mapleader = " "
 
 function Set_spaces()
@@ -35,7 +34,9 @@ set concealcursor=nv
 set conceallevel=2
 set foldenable
 set foldmethod=manual
-set guifont=agave\ Nerd\ Font\ 12
+"set guifont=agave\ Nerd\ Font\ 12
+set guifont=Lilex\ 10
+set guiligatures=!\"#$%&()*+-./:<=>?@[]^_{\|~
 set guioptions=Ac
 set hidden
 set ignorecase
@@ -113,6 +114,8 @@ call plug#begin('~/.vim/plugged')
   Plug 'justinmk/vim-dirvish'
   " better netrw
   Plug 'antoyo/vim-licenses'
+  " licenses
+  Plug 'thinca/vim-fontzoom'
 
   Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
 call plug#end()
@@ -146,6 +149,20 @@ let g:licenses_copyright_holders_name = 'krzysckh <kpm@linux.pl>'
 let g:Hexokinase_highlighters = ['backgroundfull']
 
 if has('gui_running')
+  fu FChange(how)
+    redir =>g:val
+    Fontzoom
+    redir END
+
+    let g:val = substitute(g:val, "[^0-9]", "", "g") + a:how
+    set go+=k go+=mr go-=mr go-=k
+
+    exe 'Fontzoom ' . g:val
+  endf
+
+  nmap <C-Up> :call FChange(1)<cr>
+  nmap <C-Down> :call FChange(-1)<cr>
+
   let g:startify_custom_header =
         \ startify#center(split(system('figlet -w 70 -f speed vim'), '\n'))
 else
