@@ -27,7 +27,7 @@ URxvt.matcher.pattern.1: \\bwww\\.[\\w-]+\\.[\\w./?&@#-]*[\\w/-]
 #define cyan     #949494
 #define bcyan    #949494
 #define white    #eeeeee
-#define bwhite   #ffffff
+#define bwhite   #949494
 #define fg       #464646
 
 *.foreground:     fg
