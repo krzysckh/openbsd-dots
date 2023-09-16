@@ -89,7 +89,7 @@ call plug#begin('~/.vim/plugged')
   " wakatime stats
   Plug 'editorconfig/editorconfig-vim'
   " .editorconfig
-  Plug 'dracula/vim', { 'as': 'dracula' }
+  Plug 'logico/typewriter-vim'
   " colorscheme
   Plug 'hotchpotch/perldoc-vim'
   " K for perl
@@ -120,12 +120,14 @@ call plug#begin('~/.vim/plugged')
   Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
 call plug#end()
 
-colorscheme dracula
+colorscheme typewriter
 
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 xmap <leader>a <Plug>(EasyAlign)
 nmap <leader>a <Plug>(EasyAlign)
+nmap > >>
+nmap < <<
 
 nmap <leader>y "+y
 nmap <leader>p "+p
@@ -140,6 +142,7 @@ nmap <leader>e <Plug>Scheme
 vmap <leader>e <Plug>Scheme
 
 imap <C-l> λ
+tnoremap <S-space> <space>
 
 command! -range=% Topdf :hardcopy > %.ps | !ps2pdf %.ps && rm %.ps && echo "=> %.pdf"
 
@@ -174,7 +177,7 @@ let g:startify_lists = [
       \ { 'type': 'files', 'header': ['recent'] },
       \ { 'type': 'dir', 'header': ['in '. getcwd()] }
       \ ]
-highlight StartifyHeader guifg=#dedede cterm=bold
+highlight StartifyHeader guifg=#010101 cterm=bold
 
 "let g:lsp_diagnostics_float_cursor = 1
 
@@ -210,7 +213,7 @@ aug Conceal
 aug END
 
 let g:lightline = {
-      \ 'colorscheme': 'dracula',
+      \ 'colorscheme': 'typewriter_light',
 			\ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
@@ -241,3 +244,11 @@ augroup dirvish_config
   autocmd FileType dirvish nnoremap <silent><buffer> <bs>
         \ <Plug>(dirvish_up)
 augroup END
+
+let g:terminal_ansi_colors = [
+      \ '#080808', '#464646', '#626262', '#626262',
+      \ '#B2B2B2', '#B2B2B2', '#868686', '#009900',
+      \ '#00BAFF', '#767676', '#E41D91', '#FF00AF',
+      \ '#949494', '#949494', '#eeeeee', '#ffffff' ]
+
+highlight Terminal guibg='#eeeeee' guifg='#080808'

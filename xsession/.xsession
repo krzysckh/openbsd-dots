@@ -3,6 +3,7 @@
 ulimit -Sd `ulimit -Hd`
 
 export QT_FONT_DPI=96
+export QT_QPA_PLATFORMTHEME=qt5ct
 __wm=dwm
 export _JAVA_AWT_WM_NONREPARENTING=1
 export PATH=$PATH:$HOME/bin:$HOME/.local/bin:/usr/local/plan9/bin:/usr/games:/usr/local/jdk-17/bin:$HOME/go/bin:$HOME/.cargo/bin:/usr/local/games/
@@ -20,10 +21,10 @@ xinput set-prop "/dev/wsmouse" "WS Pointer Wheel Emulation" 1
 xinput set-prop "/dev/wsmouse" "WS Pointer Wheel Emulation Button" 2
 xinput set-prop "/dev/wsmouse" "WS Pointer Wheel Emulation Axes" 6 7 4 5
 
-# openbsd-wallpaper &
-xwallpaper --output eDP1 --maximize /home/kpm/documents/img/wal.jpg
+openbsd-wallpaper &
 xbanish &
 dunst &
+redshift -l 50:20 &
 urxvtd -q -o -f
 
 export AUTOMAKE_VERSION=1.16

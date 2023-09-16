@@ -5,6 +5,7 @@ export VISUAL=vim
 export PAGER=less
 export SUDO=doas # for chicken-install
 
+alias gg='gvim . & exit'
 alias chicken-install="chicken-install -s"
 alias catgirl='catgirl -H 1'
 alias gc='git clone'
@@ -22,6 +23,26 @@ alias pstree="pstree -g3"
 alias mpvp="mpv --playlist=-"
 alias lg="lazygit"
 alias d="doas"
+alias pl="pkglocate"
+
+piq() {
+  [ -z "$1" ] && return
+
+  pkglocate $1 | cut -f1 -d: | sort | uniq
+}
+
+pi() {
+  [ -z "$1" ] && return
+
+  for i in /usr/ports/*/$1/pkg/DESCR; do
+    progname=`echo $i | sed -E 's?/usr/ports/.*/(.*)/pkg/DESCR?\1?'`
+    echo $progname
+    yes "=" | head -n `echo -n $progname | wc -c` | tr -d '\n'
+    printf "\n\n"
+    cat "$i"
+    printf "\n\n"
+  done
+}
 
 topdf() {
   [ -z "$1" ] && return

@@ -12,28 +12,48 @@ URxvt.url-launcher: firefox
 URxvt.matcher.button: Ctrl-1
 URxvt.matcher.pattern.1: \\bwww\\.[\\w-]+\\.[\\w./?&@#-]*[\\w/-]
 
-URxvt.cursorColor: #f8f8f2
-URxvt*borderColor:  [100]#282a36
+#define black    #080808
+#define bblack   #464646
+#define red      #626262
+#define bred     #626262
+#define yellow   #B2B2B2
+#define byellow  #B2B2B2
+#define green    #868686
+#define bgreen   #009900
+#define blue     #00BAFF
+#define bblue    #767676
+#define magenta  #E41D91
+#define bmagenta #FF00AF
+#define cyan     #949494
+#define bcyan    #949494
+#define white    #eeeeee
+#define bwhite   #ffffff
+#define fg       #464646
 
-! Dracula Xresources palette
-*.foreground: #F8F8F2
-*.background: #282A36
-*.color0:     #000000
-*.color8:     #4D4D4D
-*.color1:     #FF5555
-*.color9:     #FF6E67
-*.color2:     #50FA7B
-*.color10:    #5AF78E
-*.color3:     #F1FA8C
-*.color11:    #F4F99D
-*.color4:     #BD93F9
-*.color12:    #CAA9FA
-*.color5:     #FF79C6
-*.color13:    #FF92D0
-*.color6:     #8BE9FD
-*.color14:    #9AEDFE
-*.color7:     #BFBFBF
-*.color15:    #E6E6E6
+*.foreground:     fg
+#ifdef background_opacity
+*.background:     [background_opacity]white
+#else
+*.background:     white
+#endif
+*.cursorColor:    #528BFF
+*.underlineColor: yellow
+*.color0:         black
+*.color8:         bblack
+*.color1:         red
+*.color9:         bred
+*.color3:         yellow
+*.color11:        byellow
+*.color2:         green
+*.color10:        bgreen
+*.color4:         blue
+*.color12:        bblue
+*.color5:         magenta
+*.color13:        bmagenta
+*.color6:         cyan
+*.color14:        bcyan
+*.color7:         white
+*.color15:        bwhite
 
-*.color66: #282a36
-*color66:  #282a36
+*.color66: fg
+*color66:  fg
