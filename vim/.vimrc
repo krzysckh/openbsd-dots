@@ -28,6 +28,7 @@ syntax on
 "so /home/kpm/res/sus_bw.vim
 
 set autowrite
+set nocompatible
 set backspace=indent,eol,start
 set colorcolumn=80
 set concealcursor=nv
@@ -103,8 +104,6 @@ call plug#begin('~/.vim/plugged')
   " janet syntax
   Plug 'tpope/vim-eunuch'
   " unix helpers
-  Plug 'matthewfranglen/vim-scheme'
-  " scm
   Plug 'junegunn/fzf.vim'
   " fzf
   Plug 'itchyny/lightline.vim'
@@ -116,6 +115,15 @@ call plug#begin('~/.vim/plugged')
   Plug 'antoyo/vim-licenses'
   " licenses
   Plug 'thinca/vim-fontzoom'
+  " zoooooom
+  Plug 'sheerun/vim-polyglot'
+  " colors
+  Plug 'vim-scripts/transpose-words'
+  " transpose-words
+  Plug 'sillybun/vim-repl'
+  " le repl
+  Plug 'tpope/vim-speeddating'
+  " le dates
 
   Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
 call plug#end()
@@ -123,28 +131,50 @@ call plug#end()
 colorscheme typewriter
 
 xmap ga <Plug>(EasyAlign)
-nmap ga <Plug>(EasyAlign)
 xmap <leader>a <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)
 nmap <leader>a <Plug>(EasyAlign)
+
 nmap > >>
 nmap < <<
 
+map <leader>lc :s/^/; /<cr>
+map <leader>f =
 nmap <leader>y "+y
 nmap <leader>p "+p
 nmap <BS> <C-^>
 nmap <leader>d :e .<cr>
 
+nmap <leader>r :REPLToggle<cr>
+
+nmap <C-t> <Plug>Transposewords
+imap <C-t> <Plug>Transposewords
+cmap <C-t> <Plug>Transposewords
+
 map <leader><leader> :call halo#run({'shape':'line'})<CR>
 
 nmap <leader>b :Buffers<cr>
-
-nmap <leader>e <Plug>Scheme
-vmap <leader>e <Plug>Scheme
 
 imap <C-l> λ
 tnoremap <S-space> <space>
 
 command! -range=% Topdf :hardcopy > %.ps | !ps2pdf %.ps && rm %.ps && echo "=> %.pdf"
+
+let g:sendtorepl_invoke_key = "<leader>e"
+let g:repl_console_name = '*repl*'
+let g:repl_position = 3
+let g:repl_input_symbols = {
+      \ 'python': ['>>>', '>>>>', 'ipdb>', 'pdb', '...'],
+      \ 'scheme': ['>', ''],
+      \ 'racket': ['>', '']
+      \ }
+
+let g:repl_program = {
+      \	'python': ['python'],
+      \ 'scheme' : ['ol'],
+      \ 'racket' : ['racket'],
+      \	'default': ['bash']
+      \	}
 
 let g:licenses_default_commands = ['bsd2', 'bsd3', 'cc0', 'gpl', 'gplv2', 'mit',
       \ 'wtfpl']
@@ -201,8 +231,6 @@ match RedundantWhitespace /\s\+$/
 " don't highlight whitespace on Startify
 autocmd User StartifyReady match RedundantWhitespace //
 autocmd User StartifyBufferOpened match RedundantWhitespace /\s\+$/
-
-let g:scheme_evaluator = 'ol-q' " https://github.com/krzysckh/bin
 
 " conceal
 aug Conceal

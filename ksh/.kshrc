@@ -1,4 +1,5 @@
 set -o vi
+stty erase "^?"
 
 export EDITOR=vim
 export VISUAL=vim
@@ -24,6 +25,7 @@ alias mpvp="mpv --playlist=-"
 alias lg="lazygit"
 alias d="doas"
 alias pl="pkglocate"
+alias xrev="xcalib -invert -alter"
 
 piq() {
   [ -z "$1" ] && return
