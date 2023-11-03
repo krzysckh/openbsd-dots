@@ -43,11 +43,18 @@
     "vala": {
        "command": "vala-language-server",
        "filetypes": ["vala", "genie"]
-     }
-  },
-  "rust": {
-    "command": "/home/kpm/nmojeprogramy/rust-analyzer/target/release/rust-analyzer",
-    "filetypes": ["rust"],
-    "rootPatterns": ["Cargo.toml"]
+     },
+    "rust": {
+      "command": "/home/kpm/nmojeprogramy/rust-analyzer/target/release/rust-analyzer",
+      "filetypes": ["rust"],
+      "rootPatterns": ["Cargo.toml"]
+    },
+    "janet": {
+      "command": "janet-lsp",
+      "args": [
+        "--stdio"
+      ],
+      "filetypes": ["janet"],
+    }
   }
 }

@@ -26,6 +26,7 @@ alias lg="lazygit"
 alias d="doas"
 alias pl="pkglocate"
 alias xrev="xcalib -invert -alter"
+alias gotop="gotop -c default-dark"
 
 piq() {
   [ -z "$1" ] && return

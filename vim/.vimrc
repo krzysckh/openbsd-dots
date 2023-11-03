@@ -173,6 +173,7 @@ let g:repl_program = {
       \	'python': ['python'],
       \ 'scheme' : ['ol'],
       \ 'racket' : ['racket'],
+      \ 'janet': ['janet'],
       \	'default': ['bash']
       \	}
 
