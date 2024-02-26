@@ -56,5 +56,6 @@
       ],
       "filetypes": ["janet"],
     }
-  }
+  },
+  "snippets.ultisnips.pythonPrompt": false
 }

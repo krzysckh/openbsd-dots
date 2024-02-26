@@ -1,7 +1,7 @@
 my openbsd dotfiles
 ---
 
-screenshot: https://pub.krzysckh.org/screenshot.png
+screenshot (outdated): https://pub.krzysckh.org/screenshot.png
 
 about:
 X is started using xenodm(1). xenodm shows login screen, and upon login
@@ -16,11 +16,13 @@ Also, the font is Lilex.
 To use them you'll need:
 - my dwm build from https://pub.krzysckh.org/dwm.tgz
 - bsd_bar from https://github.com/krzysckh/bin (my bar script)
-- wallpaper from https://pub.krzysckh.org/wallpaper.png
+- wallpaper (outdated) from https://pub.krzysckh.org/wallpaper.png - now
+  openbsd-backgrounds
 - scrot
 - xclip
 
 Also, consider installing:
+- emacs
 - plan9port
 - figlet
 - mpv
@@ -37,5 +39,5 @@ Also, consider installing:
 ---
 
 if you want to correct me on something consider opening an issue on github
-or writing a mail to <krzych [at] catgirl [dot] digital>
+or writing a mail to <kpm [at] linux [dot] pl>
 

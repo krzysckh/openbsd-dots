@@ -25,8 +25,10 @@ alias mpvp="mpv --playlist=-"
 alias lg="lazygit"
 alias d="doas"
 alias pl="pkglocate"
+alias pa="d pkg_add"
 alias xrev="xcalib -invert -alter"
 alias gotop="gotop -c default-dark"
+alias astyle="astyle --style=mozilla --indent=spaces=2 -xB -xj"
 
 piq() {
   [ -z "$1" ] && return
