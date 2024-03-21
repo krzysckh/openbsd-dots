@@ -29,6 +29,7 @@ alias pa="d pkg_add"
 alias xrev="xcalib -invert -alter"
 alias gotop="gotop -c default-dark"
 alias astyle="astyle --style=mozilla --indent=spaces=2 -xB -xj"
+alias mp="mosh --ssh 'ssh -i .ssh/krzysckh.org' root@pub.krzysckh.org"
 
 piq() {
   [ -z "$1" ] && return
