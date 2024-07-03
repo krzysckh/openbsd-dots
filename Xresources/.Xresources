@@ -12,55 +12,57 @@ URxvt.url-launcher: firefox
 URxvt.matcher.button: Ctrl-1
 URxvt.matcher.pattern.1: \\bwww\\.[\\w-]+\\.[\\w./?&@#-]*[\\w/-]
 
-#define black    #080808
-#define bblack   #464646
-#define red      #626262
-#define bred     #626262
-#define yellow   #B2B2B2
-#define byellow  #B2B2B2
-#define green    #868686
-#define bgreen   #009900
-#define blue     #00BAFF
-#define bblue    #767676
-#define magenta  #E41D91
-#define bmagenta #FF00AF
-#define cyan     #949494
-#define bcyan    #949494
-#define white    #eeeeee
-#define bwhite   #949494
-#define fg       #464646
+#define fg #d3c6aa
+#define bg #2b3339
 
-*.foreground:     fg
-#ifdef background_opacity
-*.background:     [background_opacity]white
-#else
-*.background:     white
-#endif
-*.cursorColor:    #528BFF
-*.underlineColor: yellow
-*.color0:         black
-*.color8:         bblack
-*.color1:         red
-*.color9:         bred
-*.color3:         yellow
-*.color11:        byellow
-*.color2:         green
-*.color10:        bgreen
-*.color4:         blue
-*.color12:        bblue
-*.color5:         magenta
-*.color13:        bmagenta
-*.color6:         cyan
-*.color14:        bcyan
-*.color7:         white
-*.color15:        bwhite
+*foreground:        #d3c6aa
+*background:        #2b3339
+*.foreground:       #d3c6aa
+*.background:       #2b3339
+URxvt*foreground:   #d3c6aa
+URxvt*background:   [100]#2b3339
+URxvt*cursorColor:  #d3c6aa
+URxvt*borderColor:  [100]#2b3339
 
-*.color66: fg
-*color66:  fg
+*.color0: #2b3339
+*color0:  #2b3339
+*.color1: #e67e80
+*color1:  #e67e80
+*.color2: #a7c080
+*color2:  #a7c080
+*.color3: #dbbc7f
+*color3:  #dbbc7f
+*.color4: #7fbbb3
+*color4:  #7fbbb3
+*.color5: #d699b6
+*color5:  #d699b6
+*.color6: #8cc080
+*color6:  #8cc080
+*.color7: #53605c
+*color7:  #53605c
+*.color8: #9da9a0
+*color8:  #9da9a0
+*.color9:  #e67e80
+*color9:   #e67e80
+*.color10: #a7c080
+*color10:  #a7c080
+*.color11: #dbbc7f
+*color11:  #dbbc7f
+*.color12: #7fbbb3
+*color12:  #7fbbb3
+*.color13: #d699b6
+*color13:  #d699b6
+*.color14: #8cc080
+*color14:  #8cc080
+*.color15: #9da9a0
+*color15:  #9da9a0
+
+*.color66: #2b3339
+*color66:  #2b3339
 
 pmenu.faceName:xft:Lilex:pixelsize=13:weight=medium, xft:DejaVu Sans Mono Nerd Font:pixelsize=13, xft:Noto Color Emoji:pixelsize=14
-pmenu.background: fg
-pmenu.foreground: white
-pmenu.activeBackground: white
-pmenu.activeForeground: fg
-pmenu.borderColor: blue
+pmenu.background: bg
+pmenu.foreground: fg
+pmenu.activeBackground: fg
+pmenu.activeForeground: bg
+pmenu.borderColor: #d699b6

@@ -2,9 +2,8 @@
 
 ulimit -Sd `ulimit -Hd`
 
-export _WALLPAPER=kirby-1.jpg
-export WALLPAPER=$HOME/documents/img/bg/$_WALLPAPER
-
+# export _WALLPAPER=kirby-1.jpg
+# export WALLPAPER=$HOME/documents/img/bg/$_WALLPAPER
 export QT_FONT_DPI=96
 export QT_QPA_PLATFORMTHEME=qt5ct
 __wm=dwm
@@ -25,7 +24,15 @@ xinput set-prop "/dev/wsmouse" "WS Pointer Wheel Emulation Button" 2
 xinput set-prop "/dev/wsmouse" "WS Pointer Wheel Emulation Axes" 6 7 4 5
 
 #openbsd-wallpaper &
-xwallpaper --zoom $WALLPAPER
+#xwallpaper --zoom $WALLPAPER
+9 fortune ~/nmojeprogramy/plan9front/lib/theo \
+  | cowsay \
+  | samelines.pl \
+  | convert -size 1366x768 -gravity center -background "#2b3339" \
+  -fill "#a7c080" -pointsize 13 \
+  -font 'Lilex-Regular' label:@- /tmp/wall.png
+xwallpaper --maximize /tmp/wall.png
+
 picom &
 xbanish &
 dunst &
@@ -46,14 +53,14 @@ EOF`' &
 xclickroot -m urxvtc &
 
 case $__wm in
-	cwm)
-		bsd_bar $__wm &
-		$__wm
-		;;
-	dwm)
-		bsd_bar $__wm &
-		$__wm
-		;;
+  cwm)
+    bsd_bar $__wm &
+    $__wm
+    ;;
+  dwm)
+    bsd_bar $__wm &
+    $__wm
+    ;;
 esac
 
 ps auxw | grep bsd_bar | awk '{print $2}' | xargs kill -9

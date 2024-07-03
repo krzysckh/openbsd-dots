@@ -20,4 +20,5 @@ mkcopy profile ~/.profile
 mkcopy vim ~/.vimrc
 mkcopy vim ~/.vim/coc-settings.json
 mkcopy xsession ~/.xsession
-
+mkcopy gtk2 ~/.gtkrc-2.0
+mkcopy gtk3 ~/.config/gtk-3.0/settings.ini
