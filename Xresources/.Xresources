@@ -57,3 +57,10 @@ URxvt.matcher.pattern.1: \\bwww\\.[\\w-]+\\.[\\w./?&@#-]*[\\w/-]
 
 *.color66: fg
 *color66:  fg
+
+pmenu.faceName:xft:Lilex:pixelsize=13:weight=medium, xft:DejaVu Sans Mono Nerd Font:pixelsize=13, xft:Noto Color Emoji:pixelsize=14
+pmenu.background: fg
+pmenu.foreground: white
+pmenu.activeBackground: white
+pmenu.activeForeground: fg
+pmenu.borderColor: blue

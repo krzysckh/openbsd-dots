@@ -9,7 +9,7 @@ export QT_FONT_DPI=96
 export QT_QPA_PLATFORMTHEME=qt5ct
 __wm=dwm
 export _JAVA_AWT_WM_NONREPARENTING=1
-export PATH=$PATH:$HOME/bin:$HOME/.local/bin:/usr/local/plan9/bin:/usr/games:/usr/local/jdk-17/bin:$HOME/go/bin:$HOME/.cargo/bin:/usr/local/games/:$HOME/.local/share/racket/8.10/bin/
+export PATH=$PATH:$HOME/bin:$HOME/.local/bin:/usr/local/plan9/bin:/usr/games:/usr/local/jdk-17/bin:$HOME/go/bin:$HOME/.cargo/bin:/usr/local/games/:$HOME/.local/share/racket/8.10/bin/:/usr/local/share/ipl/bin
 
 xrdb .Xresources
 
@@ -26,6 +26,7 @@ xinput set-prop "/dev/wsmouse" "WS Pointer Wheel Emulation Axes" 6 7 4 5
 
 #openbsd-wallpaper &
 xwallpaper --zoom $WALLPAPER
+picom &
 xbanish &
 dunst &
 redshift -l 50:20 &
@@ -33,6 +34,16 @@ urxvtd -q -o -f
 
 export AUTOMAKE_VERSION=1.16
 export AUTOCONF_VERSION=2.69
+export ICONPATH="/usr/share/icons/retrosmart-icon-theme/scalable/"
+
+xclickroot -r sh -c '`<<EOF pmenu
+IMG:haikuos-app_firefox.svg	firefox
+IMG:file-manager.svg	pcmanfm
+IMG:emacs23.svg	darkmacs
+IMG:haikuos-app_mail.svg	urxvtc -e aerc
+IMG:image-x-adobe-dng.svg	shotwell
+EOF`' &
+xclickroot -m urxvtc &
 
 case $__wm in
 	cwm)
