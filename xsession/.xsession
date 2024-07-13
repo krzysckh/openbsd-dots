@@ -33,7 +33,6 @@ xinput set-prop "/dev/wsmouse" "WS Pointer Wheel Emulation Axes" 6 7 4 5
   -font 'Lilex-Regular' label:@- /tmp/wall.png
 xwallpaper --maximize /tmp/wall.png
 
-picom &
 xbanish &
 dunst &
 redshift -l 50:20 &
@@ -41,15 +40,8 @@ urxvtd -q -o -f
 
 export AUTOMAKE_VERSION=1.16
 export AUTOCONF_VERSION=2.69
-export ICONPATH="/usr/share/icons/retrosmart-icon-theme/scalable/"
 
-xclickroot -r sh -c '`<<EOF pmenu
-IMG:haikuos-app_firefox.svg	firefox
-IMG:file-manager.svg	pcmanfm
-IMG:emacs23.svg	darkmacs
-IMG:haikuos-app_mail.svg	urxvtc -e aerc
-IMG:image-x-adobe-dng.svg	shotwell
-EOF`' &
+xclickroot -r show-pmenu &
 xclickroot -m urxvtc &
 
 case $__wm in

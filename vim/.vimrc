@@ -90,7 +90,7 @@ call plug#begin('~/.vim/plugged')
   " wakatime stats
   Plug 'editorconfig/editorconfig-vim'
   " .editorconfig
-  Plug 'logico/typewriter-vim'
+  Plug 'sainnhe/everforest', { 'commit': 'd855af543410c4047fc03798f5d58ddd07abcf2d' }
   " colorscheme
   Plug 'hotchpotch/perldoc-vim'
   " K for perl
@@ -128,7 +128,10 @@ call plug#begin('~/.vim/plugged')
   Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
 call plug#end()
 
-colorscheme typewriter
+set background=dark
+let g:everforest_background = 'hard'
+let g:everforest_better_performance = 1
+colorscheme everforest
 
 xmap ga <Plug>(EasyAlign)
 xmap <leader>a <Plug>(EasyAlign)
@@ -242,7 +245,7 @@ aug Conceal
 aug END
 
 let g:lightline = {
-      \ 'colorscheme': 'typewriter_light',
+      \ 'colorscheme': 'everforest',
 			\ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
