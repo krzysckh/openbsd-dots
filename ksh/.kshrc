@@ -32,6 +32,8 @@ alias mp="mosh --ssh 'ssh -i .ssh/krzysckh.org' root@pub.krzysckh.org"
 alias mntchord="doas sshfs -o idmap=user,allow_other,uid=1000,gid=1000 root@pub.krzysckh.org:/var/www/pub/chords ~/mnt -o IdentityFile=/home/kpm/.ssh/krzysckh.org"
 alias mf="mpv --profile=fast"
 alias scmtags="find . -type f -name '*.scm' | xargs etags -l scheme --regex='/[ \t]+([ \t]*define[ \t]+(?[ \t]*\([^ \t)]+\)/\1/'"
+alias llinks="ssh -i .ssh/krzysckh.org root@l.krzysckh.org \"sqlite3 /var/www/short/public/private/db.sqlite 'select tid,target from links;'\""
+
 
 piq() {
   [ -z "$1" ] && return

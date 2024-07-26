@@ -14,6 +14,7 @@ xrdb .Xresources
 
 setxkbmap pl,apl -option grp:rctrl_switch
 
+eval $(perl -I ~/perl5/lib/perl5/ -Mlocal::lib)
 export PLAN9=/usr/local/plan9
 export ENV=$HOME/.kshrc
 export LANG=pl_PL.UTF-8
